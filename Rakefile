@@ -1,3 +1,5 @@
+require 'pry'
+
 config = {
   html: {
     out_dir: '_site',
@@ -6,7 +8,8 @@ config = {
       'LICENSE',
       'Rakefile',
       'readme.md',
-      /^includes/
+      /^includes/,
+      /template.html/
     ]
   },
   template_skips: [
@@ -53,24 +56,35 @@ namespace 'build' do
           if t_skips.map{|t| f.match(t)}.compact.length > 0
             fw.write(File.open(f).read)
           else
-            fw.write(template(f))
+            fw.write(template(File.open(f).read))
           end
         end
       end
     end
   end
 
-  def template(file)
-    template = File.open(file).read
-
+  def template(content)
     # process includes
-    template.scan(/(<#!\s*([a-z\.]+)\s*!#>)/).each do |match|
+    content.scan(/(<#!\s*([a-z\.]+)\s*!#>)/i).each do |match|
       t_include = File.join('includes', match[1])
-      template.sub!(match[0], File.open(t_include).read)
+      content.sub!(match[0], File.open(t_include).read)
     end
 
     # process parent templates (reverse include)
-    template
+    content.scan(/(<#!!\s*([a-z\.]+)\s*!!#>)/i).each do |match|
+      parent_fn = match[1]
+      parent_f = File.open(parent_fn).read
+      parent_f.scan(/(<#!\+\s*include\s*\+!#>)/).each do |p_match|
+        content.sub!(match[0], '')
+        content = parent_f.gsub(p_match[0], content)
+      end
+    end
+
+    has_t_macros(content) ? template(content) : content
+  end
+
+  def has_t_macros(content)
+    content.match(/<#.*?#>/) != nil
   end
  
 end
