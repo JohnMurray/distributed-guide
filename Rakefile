@@ -1,5 +1,3 @@
-require 'pry'
-
 config = {
   html: {
     out_dir: '_site',
