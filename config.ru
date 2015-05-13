@@ -6,5 +6,5 @@ use Rack::TryStatic,
       :urls => %w[/],    # match all requests
       :try  => ['.html', 'index.html', '/index.html'] # try these postfixes sequentially
 
-notFound = File.open('_site/index.html').read
-run lambda { |_| [200, {'Content-Type' => 'text/html'}, [notFoundPage]]}
+notFoundPage = lambda { File.open('_site/index.html').read }
+run lambda { |_| [200, {'Content-Type' => 'text/html'}, [notFoundPage.call]]}
