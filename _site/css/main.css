@@ -1,14 +1,33 @@
+/*
+ * General
+ */
 .muted {
   color: #999;
 }
 
+
+/*
+ * Home Page
+ */
 .faq h4 {
   margin-top:28px;
 }
 
+
+/*
+ * Table of Contents
+ */
 .chapter-index {
   margin-left: 15px;
 }
 .chapter-index h4 {
   margin-top:20px;
+}
+
+
+/*
+ * Footer
+ */
+hr.footer {
+  margin-top:r0px;
 }
