@@ -123,9 +123,9 @@ def build_html(out_dir, ignores, t_skips)
     else
       File.open(path, 'w') do |fw|
         if t_skips.map{|t| f.match(t)}.compact.length > 0
-          fw.write(to_html(f, format(f)))
+          fw.write(to_html(f, file_format(f)))
         else
-          fw.write(template( to_html(f, format(f)) ))
+          fw.write(template( to_html(f, file_format(f)) ))
         end
       end
     end
@@ -147,7 +147,7 @@ def to_html(file, format)
   end
 end
 
-def format(file_name)
+def file_format(file_name)
   if file_name =~ /\.md$/
     'markdown'
   else
