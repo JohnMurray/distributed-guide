@@ -1,8 +1,7 @@
 <#!! template.html !!#>
 
 ~~~
-
-# Preface
+<div class="chapter-title">Preface</div>
 
 The Distributed Guide is a map of the world of distributed computation. 
 The goal is to be the guide that I personally wish existed when I first

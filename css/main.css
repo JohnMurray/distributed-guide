@@ -31,3 +31,26 @@
 hr.footer {
   margin-top:40px;
 }
+
+
+/*
+ * Chapter Styles
+ */
+.chapter-title {
+  font-family: Georgia "Lucida Bright", serif;
+  font-size:   48px;
+  margin:      0 auto;
+  text-align:  center;
+  width:       100%;
+}
+.chapter-title::before {
+  content: "— "
+}
+.chapter-title::after {
+  content: " —"
+}
+@media (min-width: 720px) {
+  .chapter-title {
+    font-size: 64px;
+  }
+}
