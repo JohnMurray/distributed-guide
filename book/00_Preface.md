@@ -1,4 +1,4 @@
-<#!! template.html !!#>
+<#!! book/template.html !!#>
 
 ~~~
 <div class="chapter-title">Preface</div>
