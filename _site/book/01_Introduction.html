@@ -12,7 +12,6 @@
     <title>Distributed Guide</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <script src="/js/bootstrap.min.js"></script>
   </head>
@@ -41,20 +40,88 @@
 
 <h1>Pre-Requisites</h1>
 
-<p>Before starting this book, you should be comfortable with programming application on a single
-machine.</p>
+<p>Before starting this book, you should be comfortable with programming applications on a single
+machine. This guide will attempt to be as language agnostic as possible and will use a psuedo
+language for any examples (although specific open source projects may be linked). It would also be
+helpful (but not required) to be familiar with at least one concurrent programming model as well
+as network programming (such as talking to an external web-service).</p>
 
-<p>Helps to know:</p>
+<div class="alert alert-warning" role="alert">Include some links for concurrent programming</div>
 
-<ul>
-<li>talking to other systems like APIs or Databases</li>
-<li>Multi-threaded / Actor / concurrent programming models</li>
-</ul>
+
+<div class="alert alert-warning" role="alert">Include some links for network programming</div>
 
 
 <h1>Topic Information</h1>
 
+<h3>TL;DR</h3>
+
+<p>If you are looking for the short and sweet answer to the question "what is a distributed system," then
+the quote by <a href="http://www.lamport.org/">Leslie Lamport</a> summarizes this quite nicely:</p>
+
+<blockquote><p>A distributed system is one in which the failure of a computer
+you didn't even know existed can render your own computer
+unusable.</p></blockquote>
+
+<p>This suggests that a single algorithm or program is dependent up on more than a single machine to operate
+and that the machine may be distributed in a location that is remote from your computer's location. If we
+consider this to be the sole definition of a distributed system, then you can see that even simple programs
+can be distributed. Let's imagine that you are using a corporate accounting system that runs on your local
+computer. This system on your computer is likely distributed in that it talks to, and relies on, many external
+services such as:</p>
+
+<ul>
+<li>Database to store accounting information</li>
+<li>HR service to pull employee information</li>
+<li>Business Systems services to pull daily revenue information</li>
+<li>Etc.</li>
+</ul>
+
+
+<p>From this definition, we can then define a distributed algorithm as one that runs across many machines
+in order to solve a single question or serve a common purpose. In some cases, such as the one described
+above, this is fairly straight forward since all coordination can be done from a single node. In the more
+interesting case, and likely the reason you are reading this guide, we require things like membership and
+coordination in the tasks that we are performing. This requires that each node in the distributed
+system work together in some way rather than just being independent components that have no knowledge of
+the distributed system they live in.</p>
+
+<h3>The More Formal Answer</h3>
+
+<p>Before we can learn about distributed algorithms, we need to have a basic understanding of what a distributed
+system is. We can start with some basic terminology that we will use in this section.</p>
+
+<dl class="dl-horizontal">
+  <dt>node</dt>
+  <dd>talk about a node and stuffs...</dd>
+
+  <dt>vertex</dt>
+  <dd>talk about a vertex and stuffs...</dd>
+
+  <dt>configuration / state</dt>
+  <dd>talk about configuration and stuffs</dd>
+
+  <dt>transformations of state</dt>
+  <dd>talk about how we change state and stuffs...</dd>
+
+  <dt>initial configuration</dt>
+  <dd>talk about initial configurations and stuffs...</dd>
+</dl>
+
+
+<ul>
+<li>talk about nodes and processes working together</li>
+<li>categorize distributed systems into the various categories (membershpi, coordination, event ordering, etc)</li>
+</ul>
+
+
 <h1>Further Readings</h1>
+
+<p>Given that this is a guide to distributed programming, I would highly recommend that you continue
+reading to delve deeper into the various topics. In addition there are other sources of information
+that you might find useful to use in tandem with (or possibly in lieu of) this material such as
+Coursera's <a href="https://www.coursera.org/course/cloudcomputing">Cloud Computing Concepts</a> and <a href="https://www.coursera.org/course/cloudcomputing2">Cloud Computing Concepts: Part 2</a> courses and the
+<a href="https://www.youtube.com/playlist?list=PL700757A5D4B3F368">Distributed Algorithms</a> YouTube playlist by Seif Haridi.</p>
 
       </div>
 
