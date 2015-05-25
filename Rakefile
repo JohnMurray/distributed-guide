@@ -140,6 +140,11 @@ def to_html(file, format)
   case format
   when 'markdown' 
     content = content.split('~~~')
+
+    # process todo links
+    content.last.gsub!(/^todo:\s*(.*)$/i, '<div class="alert alert-warning" role="alert">\1</div>')
+
+    # ocnvert to html
     html = RDiscount.new(content.last).to_html
     content.first + html
   when 'none' 
@@ -170,7 +175,7 @@ def template(file)
   end
 
   # process parent templates (reverse include)
-  content.scan(/(<#!!\s*([a-z\.]+)\s*!!#>)/i).each do |match|
+  content.scan(/(<#!!\s*([^\s]+)\s*!!#>)/i).each do |match|
     parent_fn = match[1]
     parent_f = File.open(parent_fn).read
     parent_f.scan(/(<#!\+\s*include\s*\+!#>)/).each do |p_match|
@@ -183,6 +188,7 @@ def template(file)
   content.scan(/(<#!\+\s*version\s*\+!#>)/).each do |match|
     content.sub!(match[0], version())
   end
+
 
   has_t_macros(content) ? template(content) : content
 end
