@@ -60,5 +60,10 @@ server on [localhost:9292](http://localhost:9292/).
 The application can be build using the Makefile (not really, but soon!) and you will
 most certainly need to have [`pandoc`][1] installed.
 
+## Contributing
+
+I would love to take contributions on this project. However currently it's severely lacking in overall content
+so I won't be taking contributions until I'm a little more finished.
+
 
   [1]: http://pandoc.org/
