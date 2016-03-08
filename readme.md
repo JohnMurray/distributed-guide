@@ -65,5 +65,13 @@ most certainly need to have [`pandoc`][1] installed.
 I would love to take contributions on this project. However currently it's severely lacking in overall content
 so I won't be taking contributions until I'm a little more finished.
 
+__ToDo's__
+
+A list of todo's that I am currently working through.
+
+- [ ] Special styling for key-definitions
+- [ ] Re-organize introduction to cover basic topics (distributed programming, nodes, partition, replicas, etc.)
+- [ ] Render single-page HTML version
+
 
   [1]: http://pandoc.org/
