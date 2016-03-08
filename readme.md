@@ -43,6 +43,18 @@ The first line indicates the template to use (the path is relative to the root o
 and the `--CONTENT--` bit signifies the end of the '_header_' section and the beginning of the
 content to render inside of the template.
 
+
+## developing
+
+To start a dev-site just run
+
+```
+rake dev
+```
+
+This will start up Guard to auto-build the application as you make edits and will start a puma
+server on [localhost:9292](http://localhost:9292/).
+
 ## Building
 
 The application can be build using the Makefile (not really, but soon!) and you will
