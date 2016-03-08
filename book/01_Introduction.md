@@ -5,14 +5,7 @@
 
 # Pre-Requisites
 
-Before starting this book, you should be comfortable with programming applications on a single
-machine. This guide will attempt to be as language agnostic as possible and will use a pseudo
-language for any examples (although specific open source projects may be linked). It would also be
-helpful (but not required) to be familiar with at least one concurrent programming model as well
-as network programming (such as talking to an external web-service).
-
-todo: Include some links for concurrent programming
-todo: Include some links for network programming
+None
 
 
 # Topic Information
