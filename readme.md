@@ -5,6 +5,44 @@ the deep, deep rabbit hole that is distributed computation. This guide is still
 very much a work in progress and has no viewable form beyond the code in this
 repository. Please check back soon for something easily viewable.
 
+## Editing
+
+I've used a bit of a mashup of home-grown templating to allow me to do exactly what I need to
+generate/build the book in different formats. As such, it's worth taking just a _little_ time to
+explain what those temlating methods are.
+
+__File Includes__ \\
+To include a file, simply use
+
+```
+<#! file-name.html #!>
+```
+
+The file-name is assumed to come from the `includes` folder.
+
+__Template Files__ \\
+To define a file that should be used as a template, simply write an HTML file (no markdown for templates)
+and somehwere within the template add
+
+```
+<#!+ include +!#>
+```
+
+This will be macro-style replaced with the content of the file that is using the template.
+
+__Using A Template__ \\
+To use a template, simply start the file with
+
+```
+<#!! book/template.html !!#>
+
+--CONTENT--
+```
+
+The first line indicates the template to use (the path is relative to the root of the project)
+and the `--CONTENT--` bit signifies the end of the '_header_' section and the beginning of the
+content to render inside of the template.
+
 ## Building
 
 The application can be build using the Makefile (not really, but soon!) and you will

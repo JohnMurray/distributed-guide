@@ -1,11 +1,12 @@
 <#!! book/template.html !!#>
-~~~
+--CONTENT--
+
 <div class="chapter-title">Introduction</div>
 
 # Pre-Requisites
 
 Before starting this book, you should be comfortable with programming applications on a single
-machine. This guide will attempt to be as language agnostic as possible and will use a psuedo
+machine. This guide will attempt to be as language agnostic as possible and will use a pseudo
 language for any examples (although specific open source projects may be linked). It would also be
 helpful (but not required) to be familiar with at least one concurrent programming model as well
 as network programming (such as talking to an external web-service).
@@ -40,10 +41,10 @@ services such as:
 From this definition, we can then define a distributed algorithm as one that runs across many machines
 in order to solve a single question or serve a common purpose. In some cases, such as the one described
 above, this is fairly straight forward since all coordination can be done from a single node. In the more
-interesting case, and likely the reason you are reading this guide, we require things like membership and
-coordination in the tasks that we are performing. This requires that each node in the distributed
-system work together in some way rather than just being independent components that have no knowledge of
-the distributed system they live in.
+interesting case, and likely the reason you are reading this guide, we require things like
+coordination in the tasks that we are performing and membership to keep track of which machines can perform those
+tasks. This requires that each node in the distributed system work together in some way rather than just being
+independent components that have no knowledge of the distributed system they live in.
 
 ### The More Formal Answer
 
@@ -60,8 +61,8 @@ system is. We can start with some basic terminology that we will use in this sec
   <dt>configuration / state</dt>
   <dd>talk about configuration and stuffs</dd>
 
-  <dt>transformations of state</dt>
-  <dd>talk about how we change state and stuffs...</dd>
+  <dt>tx of state</dt>
+  <dd>talk about how we transform state and stuffs...</dd>
 
   <dt>initial configuration</dt>
   <dd>talk about initial configurations and stuffs...</dd>
@@ -69,7 +70,7 @@ system is. We can start with some basic terminology that we will use in this sec
 
 
 - talk about nodes and processes working together
-- categorize distributed systems into the various categories (membershpi, coordination, event ordering, etc)
+- categorize distributed systems into the various categories (membership, coordination, event ordering, etc)
 
 
 # Further Readings

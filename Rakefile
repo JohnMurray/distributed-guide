@@ -1,4 +1,4 @@
-# 
+#
 # INCLUDES
 #
 
@@ -65,7 +65,7 @@ namespace 'build' do
       TEMPLATE_SKIPS
     )
   end
- 
+
 end
 
 
@@ -138,8 +138,8 @@ def to_html(file, format)
   content = File.open(file).read if File.exist?(file)
 
   case format
-  when 'markdown' 
-    content = content.split('~~~')
+  when 'markdown'
+    content = content.split('--CONTENT--')
 
     # process todo links
     content.last.gsub!(/^todo:\s*(.*)$/i, '<div class="alert alert-warning" role="alert">\1</div>')
@@ -147,7 +147,7 @@ def to_html(file, format)
     # ocnvert to html
     html = RDiscount.new(content.last).to_html
     content.first + html
-  when 'none' 
+  when 'none'
     content
   end
 end
